@@ -72,6 +72,7 @@ val updateDokkatooExamplesGradleProperties by tasks.registering {
           |
         """.trimMargin()
       )
+      println("$it: ${it.readText()}")
     }
   }
 }
