@@ -4,7 +4,7 @@ pluginManagement {
   repositories {
     mavenCentral()
     gradlePluginPortal()
-    maven(providers.gradleProperty("testMavenRepo"))
+    providers.gradleProperty("testMavenRepo").takeIf { it.isPresent }?.let { maven(it) }
   }
 }
 
@@ -12,6 +12,6 @@ pluginManagement {
 dependencyResolutionManagement {
   repositories {
     mavenCentral()
-    maven(providers.gradleProperty("testMavenRepo"))
+    providers.gradleProperty("testMavenRepo").takeIf { it.isPresent }?.let { maven(it) }
   }
 }
