@@ -11,6 +11,11 @@ public final class dev/adamko/dokkatoo/DokkatooBasePlugin$Companion {
 	public final fun getTaskNames ()Ldev/adamko/dokkatoo/DokkatooBasePlugin$TaskNames;
 }
 
+public final class dev/adamko/dokkatoo/DokkatooBasePlugin$inlined$sam$i$org_gradle_api_Action$0 : org/gradle/api/Action {
+	public fun <init> (Lkotlin/jvm/functions/Function1;)V
+	public final synthetic fun execute (Ljava/lang/Object;)V
+}
+
 public abstract class dev/adamko/dokkatoo/DokkatooExtension : java/io/Serializable, org/gradle/api/plugins/ExtensionAware {
 	public abstract fun getDokkatooCacheDirectory ()Lorg/gradle/api/file/DirectoryProperty;
 	public abstract fun getDokkatooConfigurationsDirectory ()Lorg/gradle/api/file/DirectoryProperty;
@@ -426,6 +431,11 @@ public abstract class dev/adamko/dokkatoo/formats/DokkatooFormatPlugin : org/gra
 	public fun apply (Lorg/gradle/api/Project;)V
 	public fun configure (Ldev/adamko/dokkatoo/formats/DokkatooFormatPlugin$DokkatooFormatPluginContext;)V
 	public final fun getFormatName ()Ljava/lang/String;
+}
+
+public final class dev/adamko/dokkatoo/formats/DokkatooFormatPlugin$DokkatooTasks$inlined$sam$i$org_gradle_api_Action$0 : org/gradle/api/Action {
+	public fun <init> (Lkotlin/jvm/functions/Function1;)V
+	public final synthetic fun execute (Ljava/lang/Object;)V
 }
 
 public abstract class dev/adamko/dokkatoo/formats/DokkatooGfmPlugin : dev/adamko/dokkatoo/formats/DokkatooFormatPlugin {
