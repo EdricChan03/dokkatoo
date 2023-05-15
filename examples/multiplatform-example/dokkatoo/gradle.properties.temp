@@ -1,0 +1,2 @@
+# Add this property to gradle.properties!
+android.useAndroidX=true
