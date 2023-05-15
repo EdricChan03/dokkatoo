@@ -53,6 +53,22 @@ dependencies {
   // don't define test dependencies here, instead define them in the testing.suites {} configuration below
 }
 
+fun PluginDeclaration.setTags() {
+  tags.set(listOf(
+    "dokka",
+    "dokkatoo",
+    "kotlin",
+    "kdoc",
+    "android",
+    "documentation",
+    "javadoc",
+    "html",
+    "markdown",
+    "gfm",
+    "website",
+  ))
+}
+
 gradlePlugin {
   isAutomatedPublishing = true
 
@@ -61,6 +77,7 @@ gradlePlugin {
     displayName = "Dokkatoo"
     description = "Generates documentation for Kotlin projects (using Dokka)"
     implementationClass = "dev.adamko.dokkatoo.DokkatooPlugin"
+    setTags()
   }
 
   fun registerDokkaPlugin(
@@ -73,30 +90,16 @@ gradlePlugin {
       displayName = "Dokkatoo $shortName"
       description = "Generates $longName documentation for Kotlin projects (using Dokka)"
       implementationClass = "dev.adamko.dokkatoo.formats.$pluginClass"
+      setTags()
     }
   }
   registerDokkaPlugin("DokkatooGfmPlugin", "GFM", longName = "GFM (GitHub Flavoured Markdown)")
   registerDokkaPlugin("DokkatooHtmlPlugin", "HTML")
   registerDokkaPlugin("DokkatooJavadocPlugin", "Javadoc")
   registerDokkaPlugin("DokkatooJekyllPlugin", "Jekyll")
-}
 
-pluginBundle {
-  website = "https://github.com/adamko-dev/dokkatoo/"
-  vcsUrl = "https://github.com/adamko-dev/dokkatoo.git"
-  tags = listOf(
-    "dokka",
-    "dokkatoo",
-    "kotlin",
-    "kdoc",
-    "android",
-    "documentation",
-    "javadoc",
-    "html",
-    "markdown",
-    "gfm",
-    "website",
-  )
+  website.set("https://github.com/adamko-dev/dokkatoo/")
+  vcsUrl.set("https://github.com/adamko-dev/dokkatoo.git")
 }
 
 
