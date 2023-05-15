@@ -254,9 +254,9 @@ private class KotlinCompilationDetailsBuilder(
 
   private fun KotlinProjectExtension.allKotlinCompilations(): Collection<KotlinCompilation<*>> =
     when (this) {
-      is KotlinMultiplatformExtension -> targets.flatMap { it.compilations }
-      is KotlinSingleTargetExtension  -> target.compilations
-      else                            -> emptyList() // shouldn't happen?
+      is KotlinMultiplatformExtension   -> targets.flatMap { it.compilations }
+      is KotlinSingleTargetExtension<*> -> target.compilations
+      else                              -> emptyList() // shouldn't happen?
     }
 
   /**
